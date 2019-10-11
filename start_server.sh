@@ -9,7 +9,7 @@ SCRIPT_DIR="$( cd "$( dirname "$0" )" && pwd )"
 
 EXECUTABLE=webserver.py
 PARAMETERS=""
-INTERPRETER=python
+INTERPRETER=python3
 
 DEBUG=0
 
