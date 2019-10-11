@@ -28,7 +28,7 @@ import argparse
 import logging
 import time
 import threading
-import httplib
+import http.client
 from flask import Flask
 from flask import abort
 from flask import request
@@ -116,7 +116,7 @@ def check_service():
     not_started = True
     while not_started:
         try:
-            conn = httplib.HTTPConnection('localhost', json_rpc._LISTENING_PORT, timeout=1)
+            conn = http.client.HTTPConnection('localhost', json_rpc._LISTENING_PORT, timeout=1)
             conn.request('GET', '/')
             res = conn.getresponse()
             if res.status == 200:

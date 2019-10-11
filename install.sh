@@ -13,7 +13,7 @@ opkg update
 
 # install needed packages
 echo "Install needed packages"
-opkg install curl python-light python-pip pyOnionI2C
+opkg install curl python3-light python3-pip pyOnionI2C
 pip install flask
 
 echo "Linking new libraries"
@@ -21,13 +21,19 @@ echo "Linking new libraries"
 if [[ -L /usr/lib/python2.7/site-packages/hackerschool ]]; then
     rm /usr/lib/python2.7/site-packages/hackerschool
 fi
-ln -s "/opt/hucon/python_lib" /usr/lib/python2.7/site-packages/hackerschool
+if [[ -L /usr/lib/python3.6/site-packages/hackerschool ]]; then
+    rm /usr/lib/python3.6/site-packages/hackerschool
+fi
+ln -s "/opt/hucon/python_lib" /usr/lib/python3.6/site-packages/hackerschool
 
 # add the hucon to the site packages
 if [[ -L /usr/lib/python2.7/site-packages/hucon ]]; then
     rm /usr/lib/python2.7/site-packages/hucon
 fi
-ln -s "/opt/hucon/python_lib" /usr/lib/python2.7/site-packages/hucon
+if [[ -L /usr/lib/python3.6/site-packages/hucon ]]; then
+    rm /usr/lib/python3.6/site-packages/hucon
+fi
+ln -s "/opt/hucon/python_lib" /usr/lib/python3.6/site-packages/hucon
 
 echo "Removing old server startup"
 sed -i '/start_server.sh/d' /etc/rc.local
