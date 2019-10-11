@@ -6,7 +6,7 @@ The HuCon queue class for log messages.
 Author: Sascha.MuellerzumHagen@baslerweb.com
 """
 
-import Queue
+import queue
 
 class HuConLogMessage():
 
@@ -16,7 +16,7 @@ class HuConLogMessage():
     def __init__(self):
         """ Create the queue to store the log messages.
         """
-        self._queue = Queue.Queue()
+        self._queue = queue.Queue()
 
     def empty(self):
         """ Returns true when the log is empty, otherwise false.
