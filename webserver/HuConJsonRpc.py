@@ -13,6 +13,7 @@ import subprocess
 import time
 import tempfile
 import signal
+import traceback
 
 from HuConLogMessage import HuConLogMessage
 
@@ -308,7 +309,7 @@ class HuConJsonRpc():
                 self._run_file(filename)
 
             except Exception as ex:
-                self._log.put('Error: %s' % str(ex))
+                self._log.put('Error: "%s" Trace: "%s"' % str(ex) % str(ex.__traceback__))
 
             self._is_running = False
             self._current_proc = None
@@ -331,7 +332,7 @@ class HuConJsonRpc():
                 self._run_file(filename)
 
             except Exception as ex:
-                self._log.put('Error: %s' % str(ex))
+                self._log.put('Error: "%s" Trace: "%s"' % str(ex) % str(ex.__traceback__))
 
             self._is_running = False
             self._current_proc = None
