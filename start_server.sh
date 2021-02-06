@@ -1,4 +1,4 @@
-#!/bin/sh -e
+#!/bin/bash -e
 # start_server.sh - Run the python2 web server.
 #
 # Copyright (C) 2019 Basler AG

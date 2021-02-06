@@ -1,4 +1,4 @@
-#!/bin/sh -e
+#!/bin/bash -e
 # update.sh - Update the system or return the latest released version from github.
 #
 # Copyright (C) 2019 Basler AG

@@ -1,4 +1,4 @@
-#!/bin/sh -e
+#!/bin/bash -e
 # uninstall.sh - Remove all hucon files from the system.
 #
 # Copyright (C) 2019 Basler AG
