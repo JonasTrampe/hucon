@@ -1,4 +1,4 @@
-#!/bin/bash -e
+#!/bin/sh -e
 # img_install.sh - Install all packages and copy bundled files.
 #
 # Copyright (C) 2019 Basler AG
